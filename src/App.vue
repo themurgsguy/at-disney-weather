@@ -45,7 +45,7 @@
 
             <h4 class="mt-3">{{ day.weather[0].main }}</h4>
             <p class="text-muted">{{ day.weather[0].description }}</p>
-            <p class="text-muted">{{ recomend(index) }}</p>
+            <p class="text-muted">{{ recomend(day.weather[0].icon) }}</p>
           </b-card>
         </b-card-group>
       </b-container>
