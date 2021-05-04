@@ -1,4 +1,4 @@
-# at-disney-weather
+# Frontend Challenge
 
 ## Project setup
 ```
