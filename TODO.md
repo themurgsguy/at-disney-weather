@@ -25,7 +25,7 @@ Develop a website to help kids pack from an upcoming trip to Disney Land Paris. 
 Given that the project can basically be solved with a well though-out SPA, Vue.js seems like a suitable option to use.
 
 - [x]  Init and setup a new Vue.js app for the project.
-- [ ]  Setup a repository for the project on GitHub.
+- [x]  Setup a repository for the project on GitHub.
 - [x]  Blockout all the main front end features, get working prototype.
 - [x]  Start adding and building custom styling.
 - [x]  Optimize responsiveness for common screen resolutions.
