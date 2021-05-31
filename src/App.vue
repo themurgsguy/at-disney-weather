@@ -64,19 +64,18 @@
 export default {
   name: 'App',
   async mounted () {
-    const apiKey = '04caca8f971d1efd099e004afe406a6f'
-    const location = {
+    const request = {
+      exclude: 'minutely,hourly',
       lat: '48.871900',
-      lon: '2.776623'
+      lon: '2.776623',
+      key: process.env.VUE_APP_API_KEY
     }
-    const part = 'minutely,hourly'
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/onecall?lat=${location.lat}&lon=${location.lon}&units=metric&exclude=${part}&appid=${apiKey}`
+        `https://api.openweathermap.org/data/2.5/onecall?lat=${request.lat}&lon=${request.lon}&units=metric&exclude=${request.exclude}&appid=${request.key}`
       )
       if(response.ok) {
-        const text = await response.json()
-        this.forcast = text
+        this.forcast = await response.json()
       } else {
         const message = await response.json()
         console.error(message.message)
@@ -142,8 +141,8 @@ export default {
   flex-direction: column;
   justify-content: flex-start;
   min-height: 100vh;
-  // background: linear-gradient(195deg, lightblue, blue);
-  background: url('https://media.disneylandparis.com/d4th/pt-pt/images/n033395_2025aug10_world_enter-the-magic-mickey-mouse-sleeping-beauty-castle_5-1_tcm851-214769.jpg?w=1920, https://media.disneylandparis.com/d4th/pt-images/n033395_2025aug10_world_enter-the-magic-mickey-mouse-sleeping-beauty-castle_5-1_tcm851-214769.jpg?w=3840');
+  background: linear-gradient(195deg, lightblue, blue);
+  // background: url('https://media.disneylandparis.com/d4th/pt-pt/images/n033395_2025aug10_world_enter-the-magic-mickey-mouse-sleeping-beauty-castle_5-1_tcm851-214769.jpg?w=1920, https://media.disneylandparis.com/d4th/pt-images/n033395_2025aug10_world_enter-the-magic-mickey-mouse-sleeping-beauty-castle_5-1_tcm851-214769.jpg?w=3840');
   background-position: left bottom;
   background-size: cover;
   background-repeat: no-repeat;
